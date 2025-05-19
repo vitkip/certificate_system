@@ -1,0 +1,52 @@
+certificate-system/
+├── config/
+│   ├── config.php              # ตั้งค่าฐานข้อมูล
+│   └── auth.php                # ตรวจสอบ login และ permission
+│
+├── views/
+│   ├── dashboard.php
+│   ├── header.php
+│   ├── footer.php
+│   ├── login.php
+│   ├── register.php
+│   ├── student_list.php
+│   ├── student_add.php
+│   ├── student_edit.php
+│   ├── certificate_list.php
+│   └── certificate_pdf.php     # ใช้ TCPDF ออก PDF
+│
+├── actions/
+│   ├── login_process.php
+│   ├── logout.php
+│   ├── register_process.php
+│   ├── student_save.php
+│   ├── student_update.php
+│   └── generate_certificate.php
+│
+├── uploads/
+│   └── [ไฟล์ภาพนักเรียน]
+│
+├── assets/
+│   ├── css/
+│   │   └── tailwind.min.css
+│   └── js/
+│       └── main.js
+│
+├── libs/
+│   └── tcpdf/                  # TCPDF library
+│
+├── index.php                   # หน้าแรก
+└── .htaccess                   # Rewrite rules (optional)
+
+| ลำดับ | รายการพัฒนา                | รายละเอียด                                                                     | สถานะ              |
+| ----- | -------------------------- | ------------------------------------------------------------------------------ | ------------------ |
+| 1     | ฐานข้อมูลหลัก              | ออกแบบตาราง `students`, `majors`, `cert`, `users`, `members`, `academic_years` | ✅ เสร็จแล้ว        |
+| 2     | ระบบจัดการผู้ใช้งาน (Auth) | Login/Logout/Permission ตามบทบาท `admin`, `staff`                              | ✅ เสร็จแล้ว        |
+| 3     | จัดการนักเรียน             | เพิ่ม/แก้ไข/ลบ/อัปโหลดภาพ                                                      | ✅ เสร็จแล้ว        |
+| 4     | ระบบออกใบประกาศ            | ใช้ TCPDF เพื่อออก PDF                                                         | ✅ เริ่มทำแล้ว      |
+| 5     | ระบบแสดงรายชื่อ            | หน้ารายการนักเรียน ใบประกาศ เมนูแบบแยกหน้า                                     | ✅ เสร็จแล้วบางส่วน |
+| 6     | ระบบอัปโหลดภาพ             | บันทึก `image` พร้อมฟอร์มเพิ่มนักเรียน                                         | ✅ เสร็จแล้ว        |
+| 7     | ระบบ certificate templates | เลือกรูปแบบใบประกาศต่างๆ เช่น บัณฑิต / อบรม / พระ                              | ⏳ พัฒนาเพิ่มได้    |
+| 8     | ระบบกิจกรรม/Log            | บันทึกว่าใครออกใบอะไร เวลาไหน                                                  | ⏳ แนะนำเพิ่ม       |
+| 9     | ระบบแจ้งเตือน (optional)   | แจ้งเตือนเมื่อมีใบใหม่ หรือสำเร็จ                                                     | ⏳ เพิ่มภายหลัง     |
+| 10    | UI ทันสมัย                 | ปรับ UI ด้วย TailwindCSS ให้ responsive                                        | ⏳ ถ้ายัง           |
