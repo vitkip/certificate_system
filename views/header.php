@@ -9,6 +9,24 @@ require_once(__DIR__ . '/../config/auth.php');
   <title>📄 Dashboard - Certificate System</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Phetsarath:wght@400;700&display=swap');
+  body {
+    font-family: 'Phetsarath', sans-serif;
+  }
+  .phetsarath-regular {
+  font-family: "Phetsarath", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.phetsarath-bold {
+  font-family: "Phetsarath", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+</style>
 
 </head>
 <body class="bg-gray-100 text-gray-800">
