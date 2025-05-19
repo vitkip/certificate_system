@@ -82,7 +82,7 @@ $years = $pdo->query("SELECT id, year_name FROM academic_years")->fetchAll();
       <div class="mb-10 bg-gray-50 p-6 rounded-lg">
         <h3 class="text-lg font-medium text-blue-700 mb-5 pb-2 border-b border-gray-200 flex items-center gap-2">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
           </svg>
           ຂໍ້ມູນວັນເດືອນປີເກີດ
         </h3>
@@ -91,34 +91,34 @@ $years = $pdo->query("SELECT id, year_name FROM academic_years")->fetchAll();
         <div class="mb-6">
           <label class="block text-sm font-medium text-gray-700 mb-2">ວັນ/ເດືອນ/ປີເກີດ (ພາສາລາວ)</label>
           <div class="grid grid-cols-3 gap-3">
-            <select name="birth_day_lao" id="birth_day_lao" 
-                class="border border-gray-300 rounded-lg px-3 py-2.5 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all">
-              <option value="">ວັນທີ</option>
-              <?php for($i = 1; $i <= 31; $i++): ?>
-                <option value="<?= $i ?>"><?= $i ?></option>
-              <?php endfor; ?>
-            </select>
-            <select name="birth_month_lao" id="birth_month_lao" 
-                class="border border-gray-300 rounded-lg px-3 py-2.5 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all">
-              <option value="">ເດືອນ</option>
-              <?php 
-              $lao_months = ["ມັງກອນ", "ກຸມພາ", "ມີນາ", "ເມສາ", "ພຶດສະພາ", "ມິຖຸນາ", 
-                "ກໍລະກົດ", "ສິງຫາ", "ກັນຍາ", "ຕຸລາ", "ພະຈິກ", "ທັນວາ"];
-              for($i = 1; $i <= 12; $i++): 
-              ?>
-                <option value="<?= $i ?>"><?= $lao_months[$i-1] ?></option>
-              <?php endfor; ?>
-            </select>
-            <select name="birth_year_lao" id="birth_year_lao" 
-                class="border border-gray-300 rounded-lg px-3 py-2.5 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all">
-              <option value="">ປີ</option>
-              <?php 
-              $current_year = (int)date('Y');
-              for($i = $current_year - 50; $i <= $current_year - 10; $i++): 
-              ?>
-                <option value="<?= $i ?>"><?= $i ?></option>
-              <?php endfor; ?>
-            </select>
+        <select name="birth_day_lao" id="birth_day_lao" 
+            class="border border-gray-300 rounded-lg px-3 py-2.5 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all">
+          <option value="">ວັນທີ</option>
+          <?php for($i = 1; $i <= 31; $i++): ?>
+            <option value="<?= $i ?>"><?= $i ?></option>
+          <?php endfor; ?>
+        </select>
+        <select name="birth_month_lao" id="birth_month_lao" 
+            class="border border-gray-300 rounded-lg px-3 py-2.5 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all">
+          <option value="">ເດືອນ</option>
+          <?php 
+          $lao_months = ["ມັງກອນ", "ກຸມພາ", "ມີນາ", "ເມສາ", "ພຶດສະພາ", "ມິຖຸນາ", 
+            "ກໍລະກົດ", "ສິງຫາ", "ກັນຍາ", "ຕຸລາ", "ພະຈິກ", "ທັນວາ"];
+          for($i = 1; $i <= 12; $i++): 
+          ?>
+            <option value="<?= $i ?>"><?= $lao_months[$i-1] ?></option>
+          <?php endfor; ?>
+        </select>
+        <select name="birth_year_lao" id="birth_year_lao" 
+            class="border border-gray-300 rounded-lg px-3 py-2.5 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all">
+          <option value="">ປີ</option>
+          <?php 
+          $current_year = (int)date('Y');
+          for($i = $current_year - 50; $i <= $current_year - 10; $i++): 
+          ?>
+            <option value="<?= $i ?>"><?= $i ?></option>
+          <?php endfor; ?>
+        </select>
           </div>
         </div>
         
@@ -126,36 +126,37 @@ $years = $pdo->query("SELECT id, year_name FROM academic_years")->fetchAll();
         <div>
           <label class="block text-sm font-medium text-gray-700 mb-2">Date of Birth (English)</label>
           <div class="grid grid-cols-3 gap-3">
-            <select name="birth_day_en" id="birth_day_en" 
-                class="border border-gray-300 rounded-lg px-3 py-2.5 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all">
-              <option value="">Day</option>
-              <?php for($i = 1; $i <= 31; $i++): ?>
-                <option value="<?= $i ?>"><?= $i ?></option>
-              <?php endfor; ?>
-            </select>
-            <select name="birth_month_en" id="birth_month_en" 
-                class="border border-gray-300 rounded-lg px-3 py-2.5 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all">
-              <option value="">Month</option>
-              <?php 
-              $english_months = ["January", "February", "March", "April", "May", "June", 
-                "July", "August", "September", "October", "November", "December"];
-              for($i = 1; $i <= 12; $i++): 
-              ?>
-                <option value="<?= $i ?>"><?= $english_months[$i-1] ?></option>
-              <?php endfor; ?>
-            </select>
-            <select name="birth_year_en" id="birth_year_en" 
-                class="border border-gray-300 rounded-lg px-3 py-2.5 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all">
-              <option value="">Year</option>
-              <?php 
-              $current_year = (int)date('Y');
-              for($i = $current_year - 50; $i <= $current_year - 10; $i++): 
-              ?>
-                <option value="<?= $i ?>"><?= $i ?></option>
-              <?php endfor; ?>
-            </select>
+        <select name="birth_day_en" id="birth_day_en" 
+            class="border border-gray-300 rounded-lg px-3 py-2.5 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all">
+          <option value="">Day</option>
+          <?php for($i = 1; $i <= 31; $i++): ?>
+            <option value="<?= $i ?>"><?= $i ?></option>
+          <?php endfor; ?>
+        </select>
+        <select name="birth_month_en" id="birth_month_en" 
+            class="border border-gray-300 rounded-lg px-3 py-2.5 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all">
+          <option value="">Month</option>
+          <?php 
+          $english_months = ["January", "February", "March", "April", "May", "June", 
+            "July", "August", "September", "October", "November", "December"];
+          for($i = 1; $i <= 12; $i++): 
+          ?>
+            <option value="<?= $i ?>"><?= $english_months[$i-1] ?></option>
+          <?php endfor; ?>
+        </select>
+        <select name="birth_year_en" id="birth_year_en" 
+            class="border border-gray-300 rounded-lg px-3 py-2.5 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all">
+          <option value="">Year</option>
+          <?php 
+          $current_year = (int)date('Y');
+          for($i = $current_year - 50; $i <= $current_year - 10; $i++): 
+          ?>
+            <option value="<?= $i ?>"><?= $i ?></option>
+          <?php endfor; ?>
+        </select>
           </div>
           <input type="hidden" name="birth_lao" id="birth_lao">
+          <input type="hidden" name="birth_en" id="birth_en">
         </div>
       </div>
       
